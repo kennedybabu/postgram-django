@@ -38,8 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 
-    
+
     'core',
+    'core.user',
 ]
 
 MIDDLEWARE = [
@@ -79,6 +80,9 @@ WSGI_APPLICATION = 'CoreRoot.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
+        'OPTIONS': {
+                'options': '-c search_path=myschema'
+            },
         'NAME': 'coredb',
         'USER': 'core',
         'PASSWORD': 'wCh29&HE&T83',
@@ -86,6 +90,9 @@ DATABASES = {
         'PORT': '5432'
     }
 }
+
+
+AUTH_USER_MODEL = 'core_user.User'
 
 
 # Password validation
