@@ -61,6 +61,10 @@ class User(AbstractBaseUser,PermissionsMixin):
     created = models.DateTimeField(auto_now=True)
     updated = models.DateTimeField(auto_now_add=True)
 
+    bio = models.TextField(null=True)
+    # avatar = models.ImageField(null=True, blank=True, upload_to=user_directory_path)
+
+
     USERNAME_FIELD = 'email'
     REQUIRED_FIELDS = ['username']
 
