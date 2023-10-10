@@ -44,11 +44,7 @@ class UserManager(BaseUserManager, AbstractManager):
         user.is_staff = True 
         user.save(using=self._db)
 
-        return user
-        
-
-
-        
+        return user   
 
 
 class User(AbstractModel, AbstractBaseUser,PermissionsMixin):
@@ -60,6 +56,7 @@ class User(AbstractModel, AbstractBaseUser,PermissionsMixin):
     is_superuser = models.BooleanField(default=False)
 
     bio = models.TextField(null=True)
+    posts_liked = models.ManyToManyField('core_post.Post', related_name='liked_by')
     # avatar = models.ImageField(null=True, blank=True, upload_to=user_directory_path)
 
 
