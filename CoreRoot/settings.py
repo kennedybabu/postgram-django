@@ -86,7 +86,7 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2',
         'OPTIONS': {
-                'options': '-c search_path=myschema'
+                'options': '-c search_path=public'
             },
         'NAME': 'coredb',
         'USER': 'core',
