@@ -3,3 +3,9 @@ psycopg2_binary==2.9.3
 djangorestframework==3.13.1
 django-filter==21.1
 drf-nested-routers
+pillow
+djangorestframework-simplejwt
+pytest-django
+django-cors-headers
+gunicorn==20.1.0
+python-dotenv==0.20.0
